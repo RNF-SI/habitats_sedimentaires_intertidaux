@@ -1,0 +1,48 @@
+{
+  "genre": "F",
+  "label": "Station",
+  "label_list": "Stations",
+  "sorts": [
+    {"prop": "sites_group_name"}
+  ],
+  "display_properties": [
+    "sites_group_name",
+    "nom_local"
+  ],
+  "display_list": [
+    "sites_group_name",
+    "nb_sites"
+  ],
+  "specific": {
+    "id_station": {
+      "type_widget": "number",
+      "attribut_label": "ID de la station",
+      "required": true
+    },
+    "sites_group_name": {
+      "type_widget": "text",
+      "attribut_label": "Nom de la station",
+      "required": true,
+      "definition": "Nom de la station pour l'OPNL." 
+    },
+    "sites_group_code": {
+      "type_widget": "text",
+      "attribut_label": "Code la station",
+      "required": false,
+      "hidden":true
+    },
+    "sites_group_description": {
+      "type_widget": "textarea",
+      "attribut_label": "Description",
+      "hidden":true
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire",
+      "hidden":true
+    },
+    "nb_sites": {
+      "attribut_label": "Nb. de sous-stations"
+    }
+  }
+}

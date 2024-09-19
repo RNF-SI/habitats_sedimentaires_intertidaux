@@ -1,0 +1,11 @@
+{
+    "module_label":"Habitats sédimentaires intertidaux",
+    "module_desc":"Module de suivi des habitats sédimentaires intertidaux porté par Réserves Naturelles de France",
+    "b_draw_sites_group": true,
+    "genre":"M",
+    "specific": {
+      "b_draw_sites_group": {
+        "hidden": false
+      }
+    }
+}

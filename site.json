@@ -1,0 +1,56 @@
+{
+    "genre" : "F",
+    "geometry_type": "Point",
+    "label": "Sous-station",
+    "label_list": "Sous-stations",
+    "display_properties": [
+      "base_site_name",
+      "id_sites_group"
+    ],
+    "display_list": [
+      "base_site_name",
+      "id_sites_group",
+      "last_visit",
+      "nb_visits"
+    ],
+    "specific": {
+        "id_nomenclature_type_site": {
+          "type_widget": "nomenclature",
+          "attribut_label": "Type site",
+          "code_nomenclature_type": "TYPE_SITE",
+          "type_util": "nomenclature",
+          "required": true,
+          "value": {
+            "code_nomenclature_type": "TYPE_SITE",
+            "cd_nomenclature": "SStationHabSedInt"
+          },
+          "hidden": true
+        },
+      "base_site_name": {
+          "type_widget": "text",
+          "attribut_label": "Nom/code de la sous-station",
+          "required": true
+      },
+      "id_sites_group": {
+        "type_widget": "datalist",
+        "attribut_label": "Station",
+        "type_util": "sites_group",
+        "keyValue": "id_sites_group",
+        "keyLabel": "sites_group_name",
+        "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
+        "application": "GeoNature",
+        "required": true,
+        "hidden": false
+      },
+      "base_site_code": {
+        "type_widget": "text",
+        "attribut_label": "ID de la sous-station",
+        "required": false,
+        "hidden": true
+      },
+      "first_use_date": {
+        "type_widget": "date",
+        "hidden": true 
+      }
+    }
+}

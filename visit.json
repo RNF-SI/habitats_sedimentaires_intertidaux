@@ -1,0 +1,59 @@
+{
+  "genre":"F",
+  "label": "Carotte",
+  "label_list": "Carottes",
+  "display_properties": [
+    "visit_date_min",
+    "type_carotte",
+    "libelle_carotte",
+    "matiere_organique",
+    "diametre_carrottier",
+    "enfouissement_carrottier"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "type_carotte"
+  ],
+  "specific": {
+    "visit_date_min": {
+      "type_widget": "date",
+      "attribut_label": "Date du prélèvement",
+      "required": true
+    },
+    "type_carotte": {
+      "type_widget": "radio",
+      "required": true,
+      "attribut_label": "Type de carotte",
+      "values": ["Macrofaune", "Sédiments"]
+    },
+    "libelle_carotte": {
+      "type_widget": "text",
+      "attribut_label": "Libellé de la carotte",
+      "required": true
+    },
+    "matiere_organique": {
+      "type_widget": "number",
+      "attribut_label": "Pourcentage de matière organique",
+      "required": true
+    },
+    "diametre_carrottier": {
+      "type_widget": "number",
+      "attribut_label": "Diamètre du carottier (en cm)",
+      "required": true
+    },    
+    "enfouissement_carrottier": {
+      "type_widget": "number",
+      "attribut_label": "Enfouissement du carottier (en cm)",
+      "required": true
+    },
+    "taille_maille": {
+      "type_widget": "number",
+      "attribut_label": "Taille de la maille terrain",
+      "hidden": "({value}) => (value.type_carotte != 'Macrofaune')",
+      "required": "({value}) => (value.type_carotte == 'Macrofaune')"
+    },
+    "comments": {
+      "hidden": true
+    }
+  }
+}

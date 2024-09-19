@@ -1,0 +1,26 @@
+{
+    "display_properties": [
+      "determinateur",
+      "comments",
+      "type_analyse"
+    ],
+    "display_list": [
+      "cd_nom"
+    ],
+    "specific": {
+      "determinateur": {
+        "type_widget" : "text",
+        "attribut_label": "Déterminateur",
+        "required" : true
+      },
+      "comments": {
+        "attribute_label": "Commentaire"
+      },
+      "type_analyse" : {
+        "type_widget": "radio",
+        "attribut_label" : "Type d'analyse",
+        "required": true,
+        "values": []
+      }
+    }
+  }
