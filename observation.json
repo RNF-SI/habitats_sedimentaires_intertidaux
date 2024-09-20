@@ -1,26 +1,142 @@
+
 {
-    "display_properties": [
-      "determinateur",
-      "comments",
-      "type_analyse"
-    ],
-    "display_list": [
-      "cd_nom"
-    ],
-    "specific": {
-      "determinateur": {
-        "type_widget" : "text",
-        "attribut_label": "Déterminateur",
-        "required" : true
-      },
-      "comments": {
-        "attribute_label": "Commentaire"
-      },
-      "type_analyse" : {
-        "type_widget": "radio",
-        "attribut_label" : "Type d'analyse",
-        "required": true,
-        "values": []
-      }
+  "display_properties": [
+    "determinateur",
+    "comments",
+    "type_analyse_macrofaune",
+    "cd_nom",
+    "nb_individus",
+    "taille_individu",
+    "type_analyse_sediments",
+    "taille_maille_tamis",
+    "poids_tamis",
+    "poids_tamis_sediment",
+    "id_creuset",
+    "masse_creuset",
+    "masse_creuset_sediment",
+    "masse_creuset_sediment_libre_cendre"
+  ],
+  "display_list": [
+    "type_analyse_macrofaune",
+    "type_analyse_sediments"
+  ],
+  "specific": {
+    "determinateur": {
+      "type_widget" : "text",
+      "attribut_label": "Déterminateur",
+      "required" : true
+    },
+    "comments": {
+      "type_widget" : "textarea",
+      "attribute_label": "Commentaire"
+    },
+    "type_analyse_macrofaune" : {
+      "type_widget": "radio",
+      "attribut_label" : "Type d'analyse",
+      "required": "({meta}) => (meta.parents.visit.properties.type_carotte == 'Macrofaune')",
+      "hidden": "({meta}) => (meta.parents.visit.properties.type_carotte != 'Macrofaune')",
+      "values": ["Taxonomie","Biométrie"]
+    },
+    "cd_nom": {
+      "hidden": "({meta}) => (meta.parents.visit.properties.type_carotte != 'Macrofaune')",
+      "required": "({meta}) => (meta.parents.visit.properties.type_carotte == 'Macrofaune')"
+    },
+    "nb_individus" : {
+      "type_widget": "number",
+      "attribut_label" : "Nombre d'individus",
+      "required": "({value}) => (value.type_analyse_macrofaune == 'Taxonomie')",
+      "hidden": "({value}) => (value.type_analyse_macrofaune != 'Taxonomie')"
+    },
+    "taille_individu" : {
+        "type_widget": "number",
+        "attribut_label": "Taille de l'individu (en cm)",
+        "required": "({value}) => (value.type_analyse_macrofaune == 'Biométrie')",
+        "hidden": "({value}) => (value.type_analyse_macrofaune != 'Biométrie')"
+    },
+    "type_analyse_sediments" : {
+      "type_widget": "radio",
+      "attribut_label" : "Type d'analyse",
+      "required":  "({meta}) => (meta.parents.visit.properties.type_carotte == 'Sédiments')",
+      "hidden": "({meta}) => (meta.parents.visit.properties.type_carotte != 'Sédiments')",
+      "values": ["Granulométrie","Matière organique"]
+    },
+    "taille_maille_tamis" : {
+      "type_widget" : "number",
+      "attribut_label" : "Taille de la maille du tamis (en um)",
+      "required": "({value}) => (value.type_analyse_sediments == 'Granulométrie')",
+      "hidden": "({value}) => (value.type_analyse_sediments != 'Granulométrie')"
+    },
+    "poids_tamis" : {
+      "type_widget" : "number",
+      "attribut_label" : "Poids du tamis vide (en g)",
+      "required": "({value}) => (value.type_analyse_sediments == 'Granulométrie')",
+      "hidden": "({value}) => (value.type_analyse_sediments != 'Granulométrie')"      
+    },
+    "poids_tamis_sediment" : {
+      "type_widget" : "number",
+      "attribut_label" : "Poids du tamis + sédiments (en g)",
+      "required": "({value}) => (value.type_analyse_sediments == 'Granulométrie')",
+      "hidden": "({value}) => (value.type_analyse_sediments != 'Granulométrie')"      
+    },
+    "id_creuset" : {
+      "type_widget" : "number",
+      "attribut_label" : "ID du creuset (numéro de réplicat par station)",
+      "required": "({value}) => (value.type_analyse_sediments == 'Matière organique')",
+      "hidden": "({value}) => (value.type_analyse_sediments != 'Matière organique')"      
+    },
+    "masse_creuset" : {
+      "type_widget" : "number",
+      "attribut_label" : "Masse du creuset vide (en g)",
+      "required": "({value}) => (value.type_analyse_sediments == 'Matière organique')",
+      "hidden": "({value}) => (value.type_analyse_sediments != 'Matière organique')"      
+    },
+    "masse_creuset_sediment" : {
+      "type_widget" : "number",
+      "attribut_label" : "Masse du creuset + sediments (en g)",
+      "required": "({value}) => (value.type_analyse_sediments == 'Matière organique')",
+      "hidden": "({value}) => (value.type_analyse_sediments != 'Matière organique')"      
+    },
+    "masse_creuset_sediment_libre_cendre" : {
+      "type_widget" : "number",
+      "attribut_label" : "Masse du creuset + sédiments - libre de cendres (en g)",
+      "required": "({value}) => (value.type_analyse_sediments == 'Matière organique')",
+      "hidden": "({value}) => (value.type_analyse_sediments != 'Matière organique')"      
     }
-  }
+  },
+  "change": [
+    "({objForm, meta}) => {",
+    "console.log(meta.parents.visit.properties.type_carotte)",
+    "const nb_individus = 1;",
+    "if (objForm.value.type_analyse_macrofaune == 'Biométrie') {",
+    "objForm.patchValue({nb_individus})",
+    "}",
+    "let zero_macrofaune = {",
+    "taille_individu: null,",
+    "}",
+    "if((!!objForm.old_type_analyse_macrofaune) && (objForm.value.type_analyse_macrofaune != objForm.old_type_analyse_macrofaune)) {",
+    "objForm.patchValue(zero_macrofaune)",
+    "}",
+    "objForm.old_type_analyse_macrofaune = objForm.value.type_analyse_macrofaune;",
+    "let zero_sediments = {",
+    "taille_maille_tamis : null,",
+    "poids_tamis : null,",
+    "poids_tamis_sediment : null,",
+    "id_creuset : null,",
+    "masse_creuset : null,",
+    "masse_creuset_sediment : null,",
+    "masse_creuset_sediment_libre_cendre : null,",
+    "}",
+    "if((!!objForm.old_type_analyse_sediments) && (objForm.value.type_analyse_sediments != objForm.old_type_analyse_sediments)) {",
+    "objForm.patchValue(zero_sediments)",
+    "}",
+    "objForm.old_type_analyse_sediments = objForm.value.type_analyse_sediments;",
+    "const cd_nom = 0;",
+    "if (meta.parents.visit.properties.type_carotte == 'Sédiments') {",
+    "objForm.patchValue({cd_nom})",
+    "}",
+    "}",
+    ""
+    ]
+
+
+}
