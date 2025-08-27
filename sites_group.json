@@ -12,6 +12,7 @@
     "nom_local"
   ],
   "display_list": [
+    "site_opnl_name",
     "sites_group_name",
     "nb_sites"
   ],
