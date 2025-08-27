@@ -3,7 +3,9 @@
   "label": "Station",
   "label_list": "Stations",
   "sorts": [
-    {"prop": "sites_group_name"}
+    {
+      "prop": "sites_group_name"
+    }
   ],
   "display_properties": [
     "sites_group_name",
@@ -23,23 +25,29 @@
       "type_widget": "text",
       "attribut_label": "Nom de la station",
       "required": true,
-      "definition": "Nom de la station pour l'OPNL." 
+      "definition": "Nom de la station pour l'OPNL."
+    },
+    "site_opnl_name": {
+      "type_widhet": "text",
+      "attribut_label": "Nom du site",
+      "required": true,
+      "definition": "Nom du site (espace protégé)."
     },
     "sites_group_code": {
       "type_widget": "text",
       "attribut_label": "Code la station",
       "required": false,
-      "hidden":true
+      "hidden": true
     },
     "sites_group_description": {
       "type_widget": "textarea",
       "attribut_label": "Description",
-      "hidden":true
+      "hidden": true
     },
     "comments": {
       "type_widget": "textarea",
       "attribut_label": "Commentaire",
-      "hidden":true
+      "hidden": true
     },
     "nb_sites": {
       "attribut_label": "Nb. de sous-stations"
