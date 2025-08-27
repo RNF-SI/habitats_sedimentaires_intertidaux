@@ -9,7 +9,7 @@
   ],
   "display_properties": [
     "sites_group_name",
-    "nom_local"
+    "site_opnl_name"
   ],
   "display_list": [
     "site_opnl_name",
