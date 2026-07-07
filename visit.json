@@ -15,6 +15,10 @@
     "type_carotte"
   ],
   "specific": {
+    "observers": {
+      "required": false,
+      "hidden": true
+    },
     "visit_date_min": {
       "type_widget": "date",
       "attribut_label": "Date du prélèvement",

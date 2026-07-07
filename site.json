@@ -4,9 +4,8 @@
     "label": "Sous-station",
     "label_list": "Sous-stations",
     "display_properties": [
-      "base_site_name",
-      "id_sites_group"
-    ],
+      "base_site_name"
+        ],
     "display_list": [
       "base_site_name",
       "id_sites_group",
@@ -18,21 +17,14 @@
         "default": "__MODULE.IDS_TYPE_SITE", 
         "hidden": true
       },
+      "id_inventor": {
+        "required": false,
+        "hidden": true
+      },
       "base_site_name": {
           "type_widget": "text",
           "attribut_label": "Nom/code de la sous-station",
           "required": true
-      },
-      "id_sites_group": {
-        "type_widget": "datalist",
-        "attribut_label": "Station",
-        "type_util": "sites_group",
-        "keyValue": "id_sites_group",
-        "keyLabel": "sites_group_name",
-        "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
-        "application": "GeoNature",
-        "required": true,
-        "hidden": false
       },
       "base_site_code": {
         "type_widget": "text",

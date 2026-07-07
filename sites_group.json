@@ -17,6 +17,9 @@
     "nb_sites"
   ],
   "specific": {
+    "modules": {
+      "hidden": true
+    },
     "id_station": {
       "type_widget": "number",
       "attribut_label": "ID de la station",
