@@ -14,18 +14,10 @@
       "nb_visits"
     ],
     "specific": {
-        "id_nomenclature_type_site": {
-          "type_widget": "nomenclature",
-          "attribut_label": "Type site",
-          "code_nomenclature_type": "TYPE_SITE",
-          "type_util": "nomenclature",
-          "required": true,
-          "value": {
-            "code_nomenclature_type": "TYPE_SITE",
-            "cd_nomenclature": "SStationHabSedInt"
-          },
-          "hidden": true
-        },
+      "types_site": {
+        "default": "__MODULE.IDS_TYPE_SITE", 
+        "hidden": true
+      },
       "base_site_name": {
           "type_widget": "text",
           "attribut_label": "Nom/code de la sous-station",
