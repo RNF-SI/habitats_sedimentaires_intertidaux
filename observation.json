@@ -41,6 +41,12 @@
       "hidden": "({meta}) => (meta.parents.visit.properties.type_carotte != 'Macrofaune')",
       "required": "({meta}) => (meta.parents.visit.properties.type_carotte == 'Macrofaune')"
     },
+    "taxon_historique" : {
+      "type_widget": "text",
+      "attribut_label": "Taxon historique",
+      "required": "({value}) => (value.type_analyse_macrofaune == 'Taxonomie')",
+      "hidden": "({value}) => (value.type_analyse_macrofaune != 'Taxonomie')"
+    },
     "nb_individus" : {
       "type_widget": "number",
       "attribut_label" : "Nombre d'individus",
