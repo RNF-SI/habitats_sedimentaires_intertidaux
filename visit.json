@@ -6,7 +6,6 @@
     "visit_date_min",
     "type_carotte",
     "libelle_carotte",
-    "matiere_organique",
     "diametre_carrottier",
     "enfouissement_carrottier"
   ],
@@ -33,11 +32,6 @@
     "libelle_carotte": {
       "type_widget": "text",
       "attribut_label": "Libellé de la carotte",
-      "required": true
-    },
-    "matiere_organique": {
-      "type_widget": "number",
-      "attribut_label": "Pourcentage de matière organique",
       "required": true
     },
     "diametre_carrottier": {

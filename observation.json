@@ -8,6 +8,8 @@
     "nb_individus",
     "taille_individu",
     "type_analyse_sediments",
+    "masse_totale_sediments",
+    "masse_totale_sediments_sec",
     "taille_maille_tamis",
     "poids_tamis",
     "poids_tamis_sediment",
@@ -65,6 +67,18 @@
       "required":  "({meta}) => (meta.parents.visit.properties.type_carotte == 'Sédiments')",
       "hidden": false,
       "values": ["Granulométrie","Matière organique"]
+    },
+    "masse_totale_sediments" : {
+      "type_widget" : "number",
+      "attribut_label" : "Masse totale des sédiments (en g)",
+      "required": "({value}) => (value.type_analyse_sediments == 'Granulométrie')",
+      "hidden": false
+    },
+    "masse_totale_sediments_sec" : {
+      "type_widget" : "number",
+      "attribut_label" : "Masse totale des sédiments secs (en g)",
+      "required": "({value}) => (value.type_analyse_sediments == 'Granulométrie')",
+      "hidden": false
     },
     "taille_maille_tamis" : {
       "type_widget" : "number",
