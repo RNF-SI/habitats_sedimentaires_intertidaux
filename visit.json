@@ -53,7 +53,7 @@
     "taille_maille": {
       "type_widget": "number",
       "attribut_label": "Taille de la maille terrain",
-      "hidden": "({value}) => (value.type_carotte != 'Macrofaune')",
+      "hidden": false,
       "required": "({value}) => (value.type_carotte == 'Macrofaune')"
     },
     "comments": {

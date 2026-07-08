@@ -34,79 +34,79 @@
       "type_widget": "radio",
       "attribut_label" : "Type d'analyse",
       "required": "({meta}) => (meta.parents.visit.properties.type_carotte == 'Macrofaune')",
-      "hidden": "({meta}) => (meta.parents.visit.properties.type_carotte != 'Macrofaune')",
+      "hidden": false,
       "values": ["Taxonomie","Biométrie"]
     },
     "cd_nom": {
-      "hidden": "({meta}) => (meta.parents.visit.properties.type_carotte != 'Macrofaune')",
+      "hidden": false,
       "required": "({meta}) => (meta.parents.visit.properties.type_carotte == 'Macrofaune')"
     },
     "taxon_historique" : {
       "type_widget": "text",
       "attribut_label": "Taxon historique",
       "required": "({value}) => (value.type_analyse_macrofaune == 'Taxonomie')",
-      "hidden": "({value}) => (value.type_analyse_macrofaune != 'Taxonomie')"
+      "hidden": false
     },
     "nb_individus" : {
       "type_widget": "number",
       "attribut_label" : "Nombre d'individus",
       "required": "({value}) => (value.type_analyse_macrofaune == 'Taxonomie')",
-      "hidden": "({value}) => (value.type_analyse_macrofaune != 'Taxonomie')"
+      "hidden": false
     },
     "taille_individu" : {
         "type_widget": "number",
         "attribut_label": "Taille de l'individu (en cm)",
         "required": "({value}) => (value.type_analyse_macrofaune == 'Biométrie')",
-        "hidden": "({value}) => (value.type_analyse_macrofaune != 'Biométrie')"
+        "hidden": false
     },
     "type_analyse_sediments" : {
       "type_widget": "radio",
       "attribut_label" : "Type d'analyse",
       "required":  "({meta}) => (meta.parents.visit.properties.type_carotte == 'Sédiments')",
-      "hidden": "({meta}) => (meta.parents.visit.properties.type_carotte != 'Sédiments')",
+      "hidden": false,
       "values": ["Granulométrie","Matière organique"]
     },
     "taille_maille_tamis" : {
       "type_widget" : "number",
       "attribut_label" : "Taille de la maille du tamis (en um)",
       "required": "({value}) => (value.type_analyse_sediments == 'Granulométrie')",
-      "hidden": "({value}) => (value.type_analyse_sediments != 'Granulométrie')"
+      "hidden": false
     },
     "poids_tamis" : {
       "type_widget" : "number",
       "attribut_label" : "Poids du tamis vide (en g)",
       "required": "({value}) => (value.type_analyse_sediments == 'Granulométrie')",
-      "hidden": "({value}) => (value.type_analyse_sediments != 'Granulométrie')"      
+      "hidden": false
     },
     "poids_tamis_sediment" : {
       "type_widget" : "number",
       "attribut_label" : "Poids du tamis + sédiments (en g)",
       "required": "({value}) => (value.type_analyse_sediments == 'Granulométrie')",
-      "hidden": "({value}) => (value.type_analyse_sediments != 'Granulométrie')"      
+      "hidden": false
     },
     "id_creuset" : {
       "type_widget" : "number",
       "attribut_label" : "ID du creuset (numéro de réplicat par station)",
       "required": "({value}) => (value.type_analyse_sediments == 'Matière organique')",
-      "hidden": "({value}) => (value.type_analyse_sediments != 'Matière organique')"      
+      "hidden": false
     },
     "masse_creuset" : {
       "type_widget" : "number",
       "attribut_label" : "Masse du creuset vide (en g)",
       "required": "({value}) => (value.type_analyse_sediments == 'Matière organique')",
-      "hidden": "({value}) => (value.type_analyse_sediments != 'Matière organique')"      
+      "hidden": false
     },
     "masse_creuset_sediment" : {
       "type_widget" : "number",
       "attribut_label" : "Masse du creuset + sediments (en g)",
       "required": "({value}) => (value.type_analyse_sediments == 'Matière organique')",
-      "hidden": "({value}) => (value.type_analyse_sediments != 'Matière organique')"      
+      "hidden": false
     },
     "masse_creuset_sediment_libre_cendre" : {
       "type_widget" : "number",
       "attribut_label" : "Masse du creuset + sédiments - libre de cendres (en g)",
       "required": "({value}) => (value.type_analyse_sediments == 'Matière organique')",
-      "hidden": "({value}) => (value.type_analyse_sediments != 'Matière organique')"      
+      "hidden": false
     }
   },
   "change": [
