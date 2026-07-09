@@ -26,7 +26,7 @@
     "determinateur": {
       "type_widget" : "text",
       "attribut_label": "Déterminateur",
-      "required" : true
+      "required" : false
     },
     "comments": {
       "type_widget" : "textarea",
