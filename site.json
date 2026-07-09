@@ -8,7 +8,6 @@
         ],
     "display_list": [
       "base_site_name",
-      "id_sites_group",
       "last_visit",
       "nb_visits"
     ],
