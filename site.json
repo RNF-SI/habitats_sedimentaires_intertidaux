@@ -15,7 +15,7 @@
     "specific": {
       "types_site": {
         "default": "__MODULE.IDS_TYPE_SITE", 
-        "hidden": true
+        "hidden": false
       },
       "id_inventor": {
         "required": false,
